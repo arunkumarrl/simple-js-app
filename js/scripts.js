@@ -19,7 +19,7 @@ for (var i = 0; i < repository.length; i++) {
   if (repository[i].types[0]=='grass') {
     if (repository[i].height>1) {
       //document.write("<span style='color:green'>"+repository[i].name+' (height:'+repository[i].height+')-Wow, thats big!)<br>'+"</span>");
-      document.write("<span class='plant'>"+repository[i].name+' (height:'+repository[i].height+')-Wow, thats big!)<br>'+"</span>");
+      document.write("<span class='plant'>"+repository[i].name+' (height:'+repository[i].height+')-Wow, thats big!<br>'+"</span>");
     }
     else {
       //document.write("<span style='color:green'>"+repository[i].name+' (height:'+repository[i].height+')<br>'+"</span>");
