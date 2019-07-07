@@ -25,7 +25,24 @@ var pokemonRepository=(function () {
     },
     filterPokemon: function(){
     return repository.filter(element=>(element.name==='Pikachu'));//Bonus task filter function
-    }
+  },
+  addListItem: function(pokemon){
+    var listitem= document.createElement('li')
+    var buttonItem = document.createElement('button');
+    buttonItem.classList.add('liButton');
+    buttonItem.innerText= pokemon.name;
+    pokemonRepository.buttonEvent(buttonItem,pokemon);
+    listitem.appendChild(buttonItem);
+    list_ul.appendChild(listitem);
+  },
+  showDetails: function(pokemon){
+    console.log(pokemon);
+  },
+  buttonEvent: function(buttonItem,pokemon){
+    buttonItem.addEventListener('click', function (event) {
+    pokemonRepository.showDetails(pokemon);
+});
+  }
   };
 })();
 //console.log(pokemonRepository.filterPokemon());
@@ -57,6 +74,7 @@ if(test3.length===3){
   }
 }
 var test=(pokemonRepository.getAll());
-test.forEach (function(element){
-document.write('(name:'+element.name+') (height:'+element.height+') (types:'+element.types+')<br>');
-});
+var list_ul = document.querySelector('ul');
+test.forEach (function(pokemon){
+  pokemonRepository.addListItem(pokemon);
+  });
